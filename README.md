@@ -1,6 +1,7 @@
 # 🔦 NeoTorch
 
-![GitHub Repo stars](https://img.shields.io/github/stars/https%3A%2F%2Fgithub.com%2Fnasib-mohammad-cs/https%3A%2F%2Fgithub.com%2Fnasib-mohammad-cs%2FNeoTorch)
+![GitHub Repo stars](https://img.shields.io/github/stars/nasib-mohammad-cs/NeoTorch?style=social)
+
 
 
 **NeoTorch** is a minimalist, elegant web-based flashlight that turns your screen into a bright light.  
