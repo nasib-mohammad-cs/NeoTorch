@@ -178,6 +178,13 @@
       wrapper.style.visibility = visible ? 'visible' : 'hidden';
       footer.style.visibility = visible ? 'visible' : 'hidden';
     });
+
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+    .then(reg => console.log('Service Worker registered ✅'))
+    .catch(err => console.warn('Service Worker failed:', err));
+}
+
   </script>
 </body>
 </html>
