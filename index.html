@@ -8,7 +8,7 @@
   <meta name="description" content="NeoTorch is a modern, browser-based flashlight using your screen. No app required. Toggle a white screen torch instantly on any device." />
   <meta name="keywords" content="web torch, flashlight app, screen light, white screen torch, online flashlight, mobile torch, dark to white screen, emergency light, browser torch" />
   <meta name="theme-color" content="#1a1a1a" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="icons/icon-192.png" type="image/png" />
 
   <style>
@@ -186,5 +186,13 @@
 }
 
   </script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('✅ Service Worker registered'))
+      .catch(err => console.error('❌ SW error', err));
+  }
+</script>
+
 </body>
 </html>
