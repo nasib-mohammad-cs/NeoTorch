@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NeoTorch — Web Torch & Mobile Flashlight</title>
+  <meta name="description" content="NeoTorch is a modern, browser-based flashlight using your screen. No app required. Toggle a white screen torch instantly on any device." />
+  <meta name="keywords" content="web torch, flashlight app, screen light, white screen torch, online flashlight, mobile torch, dark to white screen, emergency light, browser torch" />
+  <meta name="theme-color" content="#1a1a1a" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="NeoTorch — Minimal Web Torch" />
+  <meta property="og:description" content="Turn your screen into a flashlight. No download needed. Works on all devices instantly." />
+  <meta property="og:image" content="https://nasib-mohammad-cs.github.io/neo-torch/icons/icon-512.png" />
+  <meta property="og:url" content="https://nasib-mohammad-cs.github.io/neo-torch/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="NeoTorch — Online Torch & Screen Light" />
+  <meta name="twitter:description" content="Free, instant flashlight using your screen. Tap to turn white." />
+  <meta name="twitter:image" content="https://nasib-mohammad-cs.github.io/neo-torch/icons/icon-192.png" />
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <style>
+    :root {
+      --bg-dark: #1a1a1a;
+      --shadow-dark-light: #2a2a2a;
+      --shadow-dark-deep: #0d0d0d;
+      --bg-light: #e0e0e0;
+      --shadow-light: #ffffff;
+      --shadow-light-dark: #bebebe;
+      --accent: #ffb300;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-dark);
+      transition: background-color 0.5s ease;
+    }
+
+    body.torch-on {
+      background-color: white;
+    }
+
+    #torch-btn {
+      width: 140px;
+      height: 140px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      z-index: 10;
+      position: absolute;
+      bottom: 80px;
+    }
+
+    body:not(.torch-on) #torch-btn {
+      background: var(--bg-dark);
+      box-shadow: 10px 10px 25px var(--shadow-dark-deep),
+                  -10px -10px 25px var(--shadow-dark-light);
+    }
+
+    body.torch-on #torch-btn {
+      background: #ffffff;
+      box-shadow: inset 6px 6px 15px #d3d3d3,
+                  inset -6px -6px 15px #ffffff;
+    }
+
+    #torch-btn:active {
+      transform: scale(0.96);
+    }
+
+    svg {
+      width: 70px;
+      height: 70px;
+      fill: var(--accent);
+      transition: transform 0.2s ease;
+    }
+
+    #torch-btn:hover svg {
+      transform: scale(1.05);
+    }
+
+    .torch-on svg {
+      fill: #999;
+    }
+
+    .torch-on::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+      animation: glow 1s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes glow {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <button id="torch-btn" aria-label="Toggle torch">
+    <svg viewBox="-3.94 0 122.88 122.88" xmlns="http://www.w3.org/2000/svg">
+      <path d="M36.37,82.46c-2.88-3.29-5.86-6.71-8.22-11.74c-2.31-4.96-3.59-10.08-3.55-15.4c0.05-5.32,1.4-10.8,4.34-16.46 
+        c0.02-0.04,0.04-0.07,0.06-0.11l0,0c3.85-6.52,9.24-10.88,15.24-13.32c5.03-2.06,10.5-2.76,15.86-2.27 
+        c5.34,0.49,10.57,2.17,15.14,4.87c5.81,3.44,10.59,8.54,13.22,14.98c1.42,3.49,2.38,7.38,2.5,11.64c0.12,4.25-0.61,8.83-2.57,13.67 
+        c-3,7.43-10.01,15.39-14.6,22.7c-0.25-0.05-0.51-0.06-0.77-0.02l-6.19,0.92l9.43-32.8c0.27-0.93-0.28-1.9-1.21-2.17 
+        c-0.93-0.26-1.9,0.28-2.17,1.21L63.01,92.5l-9.36,1.39l-9.89-31.44c0.71,0.14,1.46-0.17,1.85-0.83l7.01-11.93l3.57,8.19 
+        c0.39,0.89,1.42,1.29,2.3,0.91c0.44-0.19,0.76-0.55,0.93-0.96l0,0l3.16-7.98l3.7,9.76c0.34,0.91,1.35,1.36,2.26,1.02 
+        c0.91-0.34,1.36-1.35,1.02-2.26l-5.27-13.9c-0.15-0.49-0.52-0.91-1.03-1.11c-0.9-0.36-1.92,0.09-2.28,0.99l-3.27,8.27l-3.26-7.48 
+        c-0.14-0.33-0.39-0.62-0.72-0.81c-0.83-0.49-1.91-0.21-2.39,0.62l-8.52,14.5l-0.61-1.93c-0.29-0.92-1.27-1.44-2.19-1.15 
+        c-0.92,0.29-1.44,1.27-1.15,2.19l11.27,35.85l-6.78,1.01C41.72,90.57,39.22,85.73,36.37,82.46L36.37,82.46z"/>
+    </svg>
+  </button>
+  <script>
+    const torchBtn = document.getElementById('torch-btn');
+    torchBtn.addEventListener('click', () => {
+      document.body.classList.toggle('torch-on');
+    });
+  </script>
+</body>
+</html>
