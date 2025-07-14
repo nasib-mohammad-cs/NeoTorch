@@ -1,5 +1,7 @@
 # 🔦 NeoTorch
 
+![GitHub stars](https://img.shields.io/github/stars/nasib-mohammad-cs/NeoTorch?style=social)
+
 **NeoTorch** is a minimalist, elegant web-based flashlight that turns your screen into a bright light.  
 It works instantly, offline, and can even be installed on your mobile home screen — no camera, no permissions, and no nonsense.
 
@@ -11,7 +13,7 @@ It works instantly, offline, and can even be installed on your mobile home scree
 ## 🚀 Live Demo
 
 Try it now — right from your browser:  
-👉 **[https://nasib-mohammad-cs.github.io/neo-torch/](https://nasib-mohammad-cs.github.io/neo-torch/)**
+👉 **[https://nasib-mohammad-cs.github.io/NeoTorch/](https://nasib-mohammad-cs.github.io/NeoTorch/)**
 
 ---
 
@@ -19,7 +21,7 @@ Try it now — right from your browser:
 
 If you find this project useful or cool, please consider:
 
-🌟 **[Starring the repository](https://github.com/nasib-mohammad-cs/neo-torch/stargazers)**  
+🌟 **[Starring the repository](https://github.com/nasib-mohammad-cs/NeoTorch/stargazers)**  
 🔗 Sharing with friends or communities  
 🛠 Suggesting improvements or creating pull requests
 
@@ -43,13 +45,13 @@ Let’s grow this little light together!
 Clone and run locally:
 
 ```bash
-git clone https://github.com/nasib-mohammad-cs/neo-torch.git
-cd neo-torch
+git clone https://github.com/nasib-mohammad-cs/NeoTorch.git
+cd NeoTorch
 ```
 
 Then open `index.html` in your browser.
 
-Or use the [live GitHub Pages version](https://nasib-mohammad-cs.github.io/neo-torch/) directly.
+Or use the [live GitHub Pages version](https://nasib-mohammad-cs.github.io/NeoTorch/) directly.
 
 ---
 
@@ -66,7 +68,7 @@ NeoTorch is a **Progressive Web App**, meaning:
 ## 📁 Project Structure
 
 ```
-neo-torch/
+NeoTorch/
 ├── index.html           # Main UI
 ├── manifest.json        # PWA metadata (name, icons)
 ├── sw.js                # Service Worker for offline support
@@ -96,6 +98,6 @@ Let’s make NeoTorch even more useful together.
 
 > Built with light ✨ for everyone.  
 > Created by [@nasib-mohammad-cs](https://github.com/nasib-mohammad-cs)  
-> GitHub: [github.com/nasib-mohammad-cs/neo-torch](https://github.com/nasib-mohammad-cs/neo-torch)
+> GitHub: [github.com/nasib-mohammad-cs/NeoTorch](https://github.com/nasib-mohammad-cs/NeoTorch)
 
 ---
