@@ -52,6 +52,15 @@
       background-color: white;
     }
 
+    .content-wrapper {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: visibility 0.3s ease;
+    }
+
     h1 {
       font-size: 2.5rem;
       color: var(--text-light);
@@ -60,12 +69,6 @@
       border-radius: 1rem;
       box-shadow: var(--shadow-soft-dark);
       background: linear-gradient(145deg, #1e1e1e, #151515);
-    }
-
-    body.torch-on h1,
-    body.torch-on .subtitle,
-    body.torch-on footer {
-      display: none;
     }
 
     .subtitle {
@@ -119,6 +122,7 @@
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #888;
+      transition: visibility 0.3s ease;
     }
 
     footer a {
@@ -139,25 +143,42 @@
 </head>
 
 <body>
-  <h1>NeoTorch</h1>
-  <p class="subtitle">A simple, elegant flashlight using just your screen.</p>
+  <div class="content-wrapper" id="content">
+    <h1>NeoTorch</h1>
+    <p class="subtitle">A simple, elegant flashlight using just your screen.</p>
+  </div>
 
   <button id="torch-btn" aria-label="Toggle torch">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.94 0 122.88 122.88">
-      <path d="M36.37,82.46c-2.88-3.29-5.86-6.71-8.22-11.74c..."/>
+      <path d="M36.37,82.46c-2.88-3.29-5.86-6.71-8.22-11.74c-2.31-4.96-3.59-10.08-3.55-15.4c0.05-5.32,1.4-10.8,4.34-16.46 
+        c0.02-0.04,0.04-0.07,0.06-0.11l0,0c3.85-6.52,9.24-10.88,15.24-13.32c5.03-2.06,10.5-2.76,15.86-2.27 
+        c5.34,0.49,10.57,2.17,15.14,4.87c5.81,3.44,10.59,8.54,13.22,14.98c1.42,3.49,2.38,7.38,2.5,11.64c0.12,4.25-0.61,8.83-2.57,13.67 
+        c-3,7.43-10.01,15.39-14.6,22.7c-0.25-0.05-0.51-0.06-0.77-0.02l-6.19,0.92l9.43-32.8c0.27-0.93-0.28-1.9-1.21-2.17 
+        c-0.93-0.26-1.9,0.28-2.17,1.21L63.01,92.5l-9.36,1.39l-9.89-31.44c0.71,0.14,1.46-0.17,1.85-0.83l7.01-11.93l3.57,8.19 
+        c0.39,0.89,1.42,1.29,2.3,0.91c0.44-0.19,0.76-0.55,0.93-0.96l0,0l3.16-7.98l3.7,9.76c0.34,0.91,1.35,1.36,2.26,1.02 
+        c0.91-0.34,1.36-1.35,1.02-2.26l-5.27-13.9c-0.15-0.49-0.52-0.91-1.03-1.11c-0.9-0.36-1.92,0.09-2.28,0.99l-3.27,8.27l-3.26-7.48 
+        c-0.14-0.33-0.39-0.62-0.72-0.81c-0.83-0.49-1.91-0.21-2.39,0.62l-8.52,14.5l-0.61-1.93c-0.29-0.92-1.27-1.44-2.19-1.15 
+        c-0.92,0.29-1.44,1.27-1.15,2.19l11.27,35.85l-6.78,1.01C41.72,90.57,39.22,85.73,36.37,82.46L36.37,82.46z"/>
     </svg>
   </button>
 
-  <footer>
+  <footer id="footer">
     Built with light ✨ for everyone.<br />
-    <a href="https://github.com/nasib-mohammad-cs/neo-torch" target="_blank" rel="noopener">
+    <a href="https://github.com/nasib-mohammad-cs/neo-torch" target="_blank">
       Open-source and yours to improve.
     </a>
   </footer>
 
   <script>
-    document.getElementById('torch-btn').addEventListener('click', () => {
+    const torchBtn = document.getElementById('torch-btn');
+    const wrapper = document.getElementById('content');
+    const footer = document.getElementById('footer');
+
+    torchBtn.addEventListener('click', () => {
       document.body.classList.toggle('torch-on');
+      const visible = !document.body.classList.contains('torch-on');
+      wrapper.style.visibility = visible ? 'visible' : 'hidden';
+      footer.style.visibility = visible ? 'visible' : 'hidden';
     });
   </script>
 </body>
