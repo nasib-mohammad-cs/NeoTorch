@@ -24,6 +24,7 @@
 
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon-192.png" type="image/png">
+
   <style>
     :root {
       --bg-dark: #1a1a1a;
@@ -59,12 +60,11 @@
     }
 
     h1 {
-      font-size: 2.2rem;
-      color: #f5f5f5;
+      font-size: 2.5rem;
+      color: #f0f0f0;
       text-shadow: 2px 2px 5px #000;
       margin-top: 40px;
-      margin-bottom: 60px;
-      padding: 10px 30px;
+      padding: 14px 36px;
       border-radius: 20px;
       background: linear-gradient(145deg, #1e1e1e, #141414);
       box-shadow: 8px 8px 16px #0e0e0e,
@@ -77,6 +77,18 @@
       background: linear-gradient(145deg, #ffffff, #e6e6e6);
       box-shadow: inset 5px 5px 10px #d1d1d1,
                   inset -5px -5px 10px #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      margin: 10px 0 60px;
+      color: #aaa;
+      max-width: 300px;
+      line-height: 1.4;
+    }
+
+    body.torch-on .subtitle {
+      color: #444;
     }
 
     #torch-btn {
@@ -145,16 +157,24 @@
       bottom: 16px;
       font-size: 0.85rem;
       color: #888;
-      opacity: 0.7;
+      text-align: center;
+      opacity: 0.8;
     }
 
-    body.torch-on footer {
+    footer a {
       color: #aaa;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <h1>NeoTorch</h1>
+  <p class="subtitle">A simple, elegant flashlight using just your screen.</p>
 
   <button id="torch-btn" aria-label="Toggle torch">
     <svg viewBox="-3.94 0 122.88 122.88" xmlns="http://www.w3.org/2000/svg">
@@ -171,12 +191,12 @@
   </button>
 
   <footer>
-    Open-source by <a href="https://github.com/nasib-mohammad-cs" style="color:inherit;text-decoration:underline;">@nasib-mohammad-cs</a>
+    Built with light ✨ for everyone.<br />
+    <a href="https://github.com/nasib-mohammad-cs/neo-torch" target="_blank">Open-source and yours to improve.</a>
   </footer>
 
   <script>
-    const torchBtn = document.getElementById('torch-btn');
-    torchBtn.addEventListener('click', () => {
+    document.getElementById('torch-btn').addEventListener('click', () => {
       document.body.classList.toggle('torch-on');
     });
   </script>
