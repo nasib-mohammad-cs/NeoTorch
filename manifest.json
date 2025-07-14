@@ -1,9 +1,9 @@
 {
   "name": "NeoTorch",
-  "short_name": "NeoTorch",
-  "start_url": "./index.html",
+  "short_name": "Torch",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a1a1a",
+  "background_color": "#ffffff",
   "theme_color": "#1a1a1a",
   "icons": [
     {
