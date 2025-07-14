@@ -1,11 +1,13 @@
 // sw.js
 const CACHE_NAME = 'neotorch-v1';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/icons/icon-192.png',
-  '/manifest.json'
+  './',
+  './index.html',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
+
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -15,6 +17,7 @@ self.addEventListener('install', (event) => {
   );
   self.skipWaiting();
 });
+
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
